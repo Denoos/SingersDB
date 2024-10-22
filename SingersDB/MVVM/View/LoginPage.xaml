@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SingersDB.MVVM.ViewModel"
+             x:Class="SingersDB.MVVM.View.LoginPage"
+             Title="LoginPage">
+
+    <ContentPage.BindingContext>
+        <local:LoginPageVM/>
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+        <Label 
+        Text="Welcome to Roblox Remarks!"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Label HeightRequest="130"/>
+        <Label Text="Login"/>
+        <Entry Text="{Binding User.Name}"/>
+        <Label Text="Password"/>
+        <Entry Text="{Binding User.Password}"/>
+        <Label HeightRequest="40"/>
+        <Button Text="Авторизация" />
+    </VerticalStackLayout>
+</ContentPage>
