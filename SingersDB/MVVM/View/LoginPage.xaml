@@ -20,6 +20,6 @@
         <Label Text="Password"/>
         <Entry Text="{Binding User.Password}"/>
         <Label HeightRequest="40"/>
-        <Button Text="Авторизация" />
+        <Button Text="Авторизация" Command="{Binding TryAuth}"/>
     </VerticalStackLayout>
 </ContentPage>

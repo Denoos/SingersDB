@@ -5,7 +5,7 @@
              x:Class="SingersDB.MVVM.View.RegistationPage"
              Title="RegistationPage">
     <ContentPage.BindingContext>
-        <local:LoginPageVM/>
+        <local:RegisterPageVM/>
     </ContentPage.BindingContext>
 
     <VerticalStackLayout HorizontalOptions="CenterAndExpand">
@@ -19,6 +19,6 @@
         <Label Text="Password"/>
         <Entry Text="{Binding User.Password}"/>
         <Label HeightRequest="40"/>
-        <Button Text="Авторизация" />
+        <Button Text="Регистрация" Command="{Binding TryReg}"/>
     </VerticalStackLayout>
 </ContentPage>

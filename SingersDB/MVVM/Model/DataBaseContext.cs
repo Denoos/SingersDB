@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SingersDB.MVVM.Model
 {
-    public class DataBase : DbContext
+    public class DataBaseContext : DbContext
     {
         private readonly string filename;
 
-        public DataBase() { }
-        public DataBase(string filename)
+        public DataBaseContext() { }
+        public DataBaseContext(string filename)
             => this.filename = filename;
 
         public virtual DbSet<User> Users { get; set; }

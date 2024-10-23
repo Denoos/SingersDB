@@ -7,8 +7,7 @@
     Shell.FlyoutBehavior="Disabled"
     Title="SingersDB">
 
-    <TabBar>
-
+    <TabBar Route="RegLog">
         <ShellContent
         Title="Вход"
         ContentTemplate="{DataTemplate views:LoginPage}"
