@@ -7,6 +7,10 @@
     Shell.FlyoutBehavior="Disabled"
     Title="SingersDB">
 
+    <Shell.FlyoutFooter>
+        <views:FooterPage/>
+    </Shell.FlyoutFooter>
+    
     <TabBar Route="RegLog">
         <ShellContent
         Title="Вход"
@@ -18,4 +22,19 @@
         Route="RegistationPage" />
     </TabBar>
 
+    <FlyoutItem Title="User" Route="ListOfLists">
+        <ShellContent ContentTemplate="{DataTemplate views:CarouselView}" Route="CarouselView" Title="All"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Admin" Route="ListOfLists">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:CollectionViewPage}" Route="CollectionViewPage" Title="Persons"/>
+            <ShellContent ContentTemplate="{DataTemplate views:ListViewPage}" Route="ListViewPage" Title="Marks"/>
+        </Tab>
+    </FlyoutItem>
+    <TabBar Route="Add">
+            <ShellContent ContentTemplate="{DataTemplate views:AddMarkPage}" Route="AddMarkPage" Title="MarkS"/>
+            <ShellContent ContentTemplate="{DataTemplate views:AddPersonPage}" Route="AddPersonPage" Title="Person"/>
+            <ShellContent ContentTemplate="{DataTemplate views:EditMarkPage}" Route="EditMarkPage" Title="MarkS"/>
+            <ShellContent ContentTemplate="{DataTemplate views:EditPersonPage}" Route="EditPersonPage" Title="Person"/>
+    </TabBar>
 </Shell>

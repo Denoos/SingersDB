@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -88,7 +89,7 @@ namespace SingersDB.MVVM.Model
             await Task.Delay(100);
             return new List<Marks>(dataBase.Marks);
         }
-        public async Task<List<Person>> GetAllSingers()
+        public async Task<List<Person>> GetAllPersons()
         {
             await Task.Delay(100);
             return new List<Person>(dataBase.Persons);
@@ -100,10 +101,6 @@ namespace SingersDB.MVVM.Model
             dataBase.Users.Add(new User() { Name = login, Password = password });
             await dataBase.SaveChangesAsync();
         }
-        public async Task<bool> Authorization(string login, string password)
-        {
-            await Task.Delay(600);
-            return dataBase.Users.FirstOrDefault(s => s.Name == login && s.Password == password) != null;
-        }
+        public async Task<bool> Authorization(string login, string password) => await dataBase.Users.FirstOrDefaultAsync(s => s.Name == login && s.Password == password) != null;
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SingersDB.MVVM.ViewModel"
+             x:Class="SingersDB.MVVM.View.CollectionViewPage"
+             Title="CollectionViewPage">
+    <ContentPage.BindingContext>
+        <local:CollectionViewPageVM/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Margin="10" Padding="10" Stroke="Aqua" StrokeThickness="10">
+            <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Persons}" SelectionMode="Single" SelectedItem="{Binding SelPerson}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Margin="0, 0, 10, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="{Binding Id}"/>
+                            <Label Margin="0, 0, 10, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="{Binding Title}"/>
+                            <Label Margin="0, 0, 10, 100" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="{Binding Surname}"/>
+                            <DatePicker IsEnabled="False" Date="{Binding Birthay}" />
+                            <CheckBox IsChecked="{Binding IsMan}" IsEnabled="False" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Border>
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 0, 0, 20">
+            <Button WidthRequest="80" Command="{Binding Add}" Margin="10, 5, 0, 5" Text="Add"/>
+            <Button WidthRequest="80" Command="{Binding Edit}" Margin="10, 5, 0, 5" Text="Edit"/>
+            <Button WidthRequest="80" Command="{Binding Del}" Margin="10, 5, 0, 5" Text="Delete"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

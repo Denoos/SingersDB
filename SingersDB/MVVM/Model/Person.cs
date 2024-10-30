@@ -10,7 +10,5 @@ namespace SingersDB.MVVM.Model
         public DateOnly Birthay { get; set; }
         public bool IsMan { get; set; }
         public List<Marks> Marks { get; set; }
-        [NotMapped]
-        public string ManOrWomen { get => IsMan ? "man" : "women"; }
     }
 }

@@ -32,12 +32,15 @@ namespace SingersDB.MVVM.ViewModel
         {
             DB dataBase = DB.Instance;
             if (User == null || User.Name == "" || User.Password == "")
-                Application.Current.MainPage.DisplayAlert("Social Credit", "Вы не тот, кем называетесь (ㆆ_ㆆ)", "ок");
+                Application.Current.MainPage.DisplayAlert("Social Credit", "Вы чего-то не договариваете (ㆆ_ㆆ)", "ок");
             else
             {
                 if (await dataBase.Authorization(User.Name, User.Password))
-                    //Shell.Current.GoToAsync("//ListPage");
-                    User.Name = "true"; // заглушка на условие до готовности страницы
+                {
+                    User = new();
+                    Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+                    await Shell.Current.GoToAsync("//CarouselView");
+                }
                 else Application.Current.MainPage.DisplayAlert("Social Credit", "Вы не тот, кем называетесь (ㆆ_ㆆ)", "ок");
             }
         }

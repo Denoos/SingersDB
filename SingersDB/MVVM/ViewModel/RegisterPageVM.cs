@@ -35,6 +35,7 @@ namespace SingersDB.MVVM.ViewModel
                 Application.Current.MainPage.DisplayAlert("Social Credit", "Вы чего-то не договариваете (ㆆ_ㆆ)", "ок");
             else
             {
+                User = new();
                 await dataBase.Registraition(User.Name, User.Password);
                 await Shell.Current.GoToAsync("//LoginPage");
             }
