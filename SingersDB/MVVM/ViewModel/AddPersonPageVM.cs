@@ -11,8 +11,9 @@ namespace SingersDB.MVVM.ViewModel
     {
         public AddPersonPageVM()
         {
-            Save = new VmCommand(async () => await Shell.Current.GoToAsync("//CollectionViewPage"));
-            Back = new VmCommand(() => SaveAndBackMethod());
+            Back = new VmCommand(async () => await Shell.Current.GoToAsync("//CollectionViewPage"));
+            Save = new VmCommand(() => SaveAndBackMethod());
+            Person = new();
         }
 
         private Person person;

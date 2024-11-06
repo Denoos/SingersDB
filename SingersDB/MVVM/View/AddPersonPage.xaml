@@ -14,15 +14,15 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <VerticalStackLayout WidthRequest="300" HorizontalOptions="CenterAndExpand">
+        <VerticalStackLayout BindingContext="{Binding Person}" WidthRequest="300" HorizontalOptions="CenterAndExpand">
             <Label Text="Имя"/>
-            <Entry Text="{Binding Person.Name}"/>
+            <Entry Text="{Binding Name}"/>
             <Label Text="Фамилия"/>
-            <Entry Text="{Binding Person.Surname}"/>
+            <Entry Text="{Binding Surname}"/>
             <Label Text="День рождения"/>
-            <DatePicker Date="{Binding Person.Birthay}"/>
+            <DatePicker Date="{Binding Birthay}"/>
             <Label Text="Мужчина"/>
-            <CheckBox HorizontalOptions="Start" IsChecked="{Binding Person.IsMan}"/>
+            <CheckBox HorizontalOptions="Start" IsChecked="{Binding IsMan}"/>
             <Label HeightRequest="40"/>
         </VerticalStackLayout>
 

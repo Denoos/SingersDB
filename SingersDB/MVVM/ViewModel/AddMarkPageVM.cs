@@ -11,8 +11,8 @@ namespace SingersDB.MVVM.ViewModel
     {
         public AddMarkPageVM()
         {
-            Save = new VmCommand(async () => await Shell.Current.GoToAsync("//ListViewPage"));
-            Back = new VmCommand(() => SaveAndBackMethod());
+            Back = new VmCommand(async () => await Shell.Current.GoToAsync("//ListViewPage"));
+            Save = new VmCommand(() => SaveAndBackMethod());
             GetPersonList();
             Mark.CreateDate = DateTime.Now;
             Mark.LastUpdateDate = DateTime.Now;

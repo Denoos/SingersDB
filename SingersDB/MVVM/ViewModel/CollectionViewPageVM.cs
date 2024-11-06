@@ -45,11 +45,11 @@ namespace SingersDB.MVVM.ViewModel
         private async Task GetList()
             => Persons = await DB.Instance.GetAllPersons();
 
-        private async Task AddPerson() => await Shell.Current.GoToAsync("//AddPersonPage");
+        private async Task AddPerson() => await Shell.Current.GoToAsync("/AddPersonPage");
         private async Task EditPerson()
         {
             if (SelPerson != null)
-                await Shell.Current.GoToAsync("//EditPersonPage", new ShellNavigationQueryParameters() { { "SelPerson", SelPerson } });
+                await Shell.Current.GoToAsync("../EditPersonPage", new ShellNavigationQueryParameters() { { "SelPerson", SelPerson } });
             else
                 Application.Current.MainPage.DisplayAlert("Внимание", "Выберите персону для редактирования", "Ок");
         }

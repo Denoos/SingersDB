@@ -47,15 +47,16 @@ namespace SingersDB.MVVM.ViewModel
 
         private async Task AddMark()
         {
-            if (DB.Instance.GetAllPersons().Result.Count == 0 || DB.Instance.GetAllPersons().Result == null)
+            var a = DB.Instance.GetAllPersons().Result;
+            if (a == null || a.Count == 0 )
                 Application.Current.MainPage.DisplayAlert("Внимание", "Список людей пуст, сначала добавте персону", "Ок");
             else
-                await Shell.Current.GoToAsync("//AddMarkPage");
+                await Shell.Current.GoToAsync("AddMarkPage");
         }
         private async Task EditMark()
         {
             if (SelMark != null)
-                await Shell.Current.GoToAsync("//EditMarkPage", new ShellNavigationQueryParameters() { { "SelMark", SelMark } });
+                await Shell.Current.GoToAsync("../EditMarkPage", new ShellNavigationQueryParameters() { { "SelMark", SelMark } });
             else
                 Application.Current.MainPage.DisplayAlert("Внимание", "Выберите заметку для редактирования", "Ок");
         }

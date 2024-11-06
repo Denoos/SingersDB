@@ -31,10 +31,4 @@
             <ShellContent ContentTemplate="{DataTemplate views:ListViewPage}" Route="ListViewPage" Title="Marks"/>
         </Tab>
     </FlyoutItem>
-    <TabBar Route="Add">
-            <ShellContent ContentTemplate="{DataTemplate views:AddMarkPage}" Route="AddMarkPage" Title="MarkS"/>
-            <ShellContent ContentTemplate="{DataTemplate views:AddPersonPage}" Route="AddPersonPage" Title="Person"/>
-            <ShellContent ContentTemplate="{DataTemplate views:EditMarkPage}" Route="EditMarkPage" Title="MarkS"/>
-            <ShellContent ContentTemplate="{DataTemplate views:EditPersonPage}" Route="EditPersonPage" Title="Person"/>
-    </TabBar>
 </Shell>

@@ -6,7 +6,10 @@ namespace SingersDB
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute("AddMarkPage", typeof(AddMarkPage));
+            Routing.RegisterRoute("AddPersonPage", typeof(AddPersonPage));
+            Routing.RegisterRoute("EditMarkPage", typeof(EditMarkPage));
+            Routing.RegisterRoute("EditPersonPage", typeof(EditPersonPage));
         }
-        //ПРОПИСАТЬ роуты для добавлнения, редактирования, чтобы убрать из апшелла
     }
 }
